@@ -1,14 +1,14 @@
 import { Product } from "../../domain/product.entity";
 import { ProductGateway } from "../../gateway/product.gateway";
 import {
-  CreateProductInputDto,
-  CreateProductOutputDto,
+  CreateProductInputDTO,
+  CreateProductOutputDTO,
 } from "./create-product.dto";
 
 class CreateProductUseCase {
   constructor(readonly productRepository: ProductGateway) {}
 
-  async execute(input: CreateProductInputDto): Promise<CreateProductOutputDto> {
+  async execute(input: CreateProductInputDTO): Promise<CreateProductOutputDTO> {
     const product = new Product(input);
     await this.productRepository.create(product);
     return {

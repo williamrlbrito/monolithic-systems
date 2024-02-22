@@ -1,11 +1,11 @@
-interface CreateProductInputDto {
+interface CreateProductInputDTO {
   name: string;
   description: string;
   purchasePrice: number;
   stock: number;
 }
 
-interface CreateProductOutputDto {
+interface CreateProductOutputDTO {
   id: string;
   name: string;
   description: string;
@@ -15,4 +15,4 @@ interface CreateProductOutputDto {
   updatedAt: Date;
 }
 
-export { CreateProductInputDto, CreateProductOutputDto };
+export { CreateProductInputDTO, CreateProductOutputDTO };
