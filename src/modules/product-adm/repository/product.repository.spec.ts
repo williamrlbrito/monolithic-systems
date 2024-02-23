@@ -37,11 +37,11 @@ describe("Product repository unit test", () => {
       where: { id: product.id.id },
     });
 
-    expect(product.id.id).toBe(db.getDataValue("id"));
-    expect(product.name).toBe(db.getDataValue("name"));
-    expect(product.description).toBe(db.getDataValue("description"));
-    expect(product.purchasePrice).toBe(db.getDataValue("purchasePrice"));
-    expect(product.stock).toBe(db.getDataValue("stock"));
+    expect(product.id.id).toBe(db.id);
+    expect(product.name).toBe(db.name);
+    expect(product.description).toBe(db.description);
+    expect(product.purchasePrice).toBe(db.purchasePrice);
+    expect(product.stock).toBe(db.stock);
   });
 
   it("should find a product", async () => {

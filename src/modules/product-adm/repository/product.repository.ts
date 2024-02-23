@@ -11,8 +11,6 @@ class ProductRepository implements ProductGateway {
       description: product.description,
       purchasePrice: product.purchasePrice,
       stock: product.stock,
-      createdAt: new Date(),
-      updatedAt: new Date(),
     });
   }
 
@@ -26,13 +24,13 @@ class ProductRepository implements ProductGateway {
     }
 
     return new Product({
-      id: new Id(product.getDataValue("id")),
-      name: product.getDataValue("name"),
-      description: product.getDataValue("description"),
-      purchasePrice: product.getDataValue("purchasePrice"),
-      stock: product.getDataValue("stock"),
-      createdAt: product.getDataValue("createdAt"),
-      updatedAt: product.getDataValue("updatedAt"),
+      id: new Id(product.id),
+      name: product.name,
+      description: product.description,
+      purchasePrice: product.purchasePrice,
+      stock: product.stock,
+      createdAt: product.createdAt,
+      updatedAt: product.updatedAt,
     });
   }
 }

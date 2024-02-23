@@ -37,9 +37,9 @@ describe("ProductAdmFacade unit test", () => {
       where: { name: input.name },
     });
 
-    expect(product.getDataValue("name")).toBe(input.name);
-    expect(product.getDataValue("description")).toBe(input.description);
-    expect(product.getDataValue("purchasePrice")).toBe(input.purchasePrice);
-    expect(product.getDataValue("stock")).toBe(input.stock);
+    expect(product.name).toBe(input.name);
+    expect(product.description).toBe(input.description);
+    expect(product.purchasePrice).toBe(input.purchasePrice);
+    expect(product.stock).toBe(input.stock);
   });
 });
