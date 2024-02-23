@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 import { ProductModel } from "../repository/product.model";
 import { CreateProductFacadeInputDTO } from "./product-adm.facade.interface";
 import { ProductAdmFacadeFactory } from "../factory/facade.factory";
+import { Id } from "../../@shared/domain/value-object/id.value-object";
 
 describe("ProductAdmFacade unit test", () => {
   let sequelize: Sequelize;
@@ -41,5 +42,18 @@ describe("ProductAdmFacade unit test", () => {
     expect(product.description).toBe(input.description);
     expect(product.purchasePrice).toBe(input.purchasePrice);
     expect(product.stock).toBe(input.stock);
+  });
+
+  it("should check product stock", async () => {
+    const productFacade = ProductAdmFacadeFactory.create();
+
+    const input: CreateProductFacadeInputDTO = {
+      name: "Product 1",
+      description: "Description of product 1",
+      purchasePrice: 10,
+      stock: 10,
+    };
+
+    await productFacade.createProduct(input);
   });
 });
