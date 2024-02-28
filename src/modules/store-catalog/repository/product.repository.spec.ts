@@ -41,4 +41,19 @@ describe("product repository unit test", () => {
     const products = await productRepository.find();
     expect(products.length).toBe(2);
   });
+
+  it("should find product by id", async () => {
+    const id = new Id().id;
+    await ProductModel.create({
+      id,
+      name: "product 1",
+      description: "description 1",
+      salesPrice: 100,
+    });
+
+    const productRepository = new ProductRepository();
+    const product = await productRepository.findById(id);
+    expect(product).not.toBeNull();
+    expect(product.id.id).toBe(id);
+  });
 });
